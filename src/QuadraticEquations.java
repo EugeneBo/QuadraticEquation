@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class QuadraticEquations {
     public static void main(String[] args) {
-//test test
+
 
         Scanner sc = new Scanner(System.in);
 
@@ -23,16 +23,16 @@ public class QuadraticEquations {
         if (a == 0) {
             if (b != 0) {
 
-                System.out.print("\nYour equation has a linear type: " + b + "x");
-                System.out.format("%+f=0", c);
+                System.out.print("\nYour equation has a linear type: ");
+                System.out.format("%fx%+f=0",b, c);
                 System.out.println("\nRoot: x=" + (-c / b));
             } else {
                 System.out.print("No roots!");
             }
 
         } else {
-            System.out.print("\nYour equation is: " + a + "x^2");
-            System.out.format("%+fx%+f=0", b, c);
+            System.out.print("\nYour equation is: ");
+            System.out.format("%fx^2%+fx%+f=0",a, b, c);
 
             double d = (b * b) - (4 * a * c);
 
