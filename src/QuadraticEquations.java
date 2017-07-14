@@ -12,46 +12,32 @@ public class QuadraticEquations {
         System.out.print("a=");
         double a = sc.nextDouble();
 
-
         System.out.print("b=");
         double b = sc.nextDouble();
 
         System.out.print("c=");
         double c = sc.nextDouble();
 
+        System.out.format("\nYour equation is: %fx^2%+fx%+f=0", a, b, c);
 
-        if (a == 0) {
-            if (b != 0) {
+        double d = (b * b) - (4 * a * c);
+        double Root1 = -b / (2 * a);
+        double Root2 = (Math.sqrt(Math.abs(d))) / (2 * a);
 
-                System.out.print("\nYour equation has a linear type: ");
-                System.out.format("%fx%+f=0",b, c);
-                System.out.println("\nRoot: x=" + (-c / b));
+        if (d >= 0) {
+
+            if (d == 0) {
+
+                System.out.println("\nRoots are: x1=x2=" + Root1);
             } else {
-                System.out.print("No roots!");
+                System.out.print("\nRoots are: x1=" + (Root1 + Root2) + "; x2=" + (Root1 - Root2));
             }
 
         } else {
-            System.out.print("\nYour equation is: ");
-            System.out.format("%fx^2%+fx%+f=0",a, b, c);
 
-            double d = (b * b) - (4 * a * c);
-
-            if (d >= 0) {
-
-                if (d == 0) {
-                    System.out.println("\nRoots are: x1=x2=" + (-b / (2 * a)));
-                } else {
-                    System.out.print("\nRoots are: x1=" + ((-b + Math.sqrt(d)) / (2 * a)));
-                    System.out.print("; x2=" + ((-b - Math.sqrt(d)) / (2 * a)));
-                }
-
-            } else {
-                System.out.print("\nRoots are: x1=" + (-b / (2 * a) + "+" + ((Math.sqrt(Math.abs(d))) / (2 * a)) + "i"));
-                System.out.print("; x2=" + (-b / (2 * a) + "-" + ((Math.sqrt(Math.abs(d))) / (2 * a)) + "i"));
-            }
-
-
+            System.out.format("\nRoots are: x1=" + Root1 + "+" + Math.abs(Root2) + "*i" + "; x2=" + Root1 + "-" + Math.abs(Root2) + "*i");
         }
+
 
     }
 }
